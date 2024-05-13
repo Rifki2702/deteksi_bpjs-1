@@ -67,7 +67,7 @@
 							echo '<div class="p-3 border border-red-400 w-64 mx-auto mb-3">' . $hasil_cek['title'] . '</div>';
 							echo '<div class="p-3 border border-yellow-400 w-full mx-auto mb-3">' . $hasil_cek['keterangan'] . '</div>';
 						} else {
-							echo "Tidak Sesuai dengan BA kesepakatan !!";
+							 echo "<span style='color:red; font-weight:bold;'>Tidak Sesuai dengan BA kesepakatan !!</span>";
 						}
 						?>
 
