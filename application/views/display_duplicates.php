@@ -8,6 +8,9 @@
 		.bg-blue-900,.bg-blue-700,.text-blue-900{
 			background-color: #7FB0C5 !important;
 		}
+		.bg-green-900,.bg-green-700,.text-green-900{
+			background-color: #3EB489 !important;
+		}
 		.bg-gray-100{
 			background-color: rgba(127, 176, 197, 0.4) !important;
 		}
@@ -61,7 +64,7 @@
 		<?php if (!empty($duplicates)): ?>
 		<div class="relative overflow-x-auto">
 			<table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 border">
-				<thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+				<thead class="text-xs text-gray-700 uppercase bg-blue-900 dark:bg-gray-700 dark:text-gray-400">
 					<tr class="">
 						<th class="px-6 py-3">NO</th>
 						<th class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">No.RM</th>
@@ -80,6 +83,9 @@
 						<th class="px-6 py-3"></th>
 						<th class="px-6 py-3">Tanggal Masuk</th>
 						<th class="px-6 py-3">Tanggal Pulang</th>
+						<th class="px-6 py-3"></th>
+						<th class="px-6 py-3"></th>
+						<th class="px-6 py-3"></th>
 						<th class="px-6 py-3"></th>
 						<th class="px-6 py-3"></th>
 						<th class="px-6 py-3"></th>

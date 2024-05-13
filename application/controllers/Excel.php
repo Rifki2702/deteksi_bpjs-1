@@ -62,7 +62,7 @@ class Excel extends CI_Controller {
 		$duplicates = $this->findDuplicates($sheetData);
 		$groupedData = array();
 
-		$colors = array('#90e0ef', '#FFFFFF'); // Putih dan Biru
+		$colors = array('#90e0ef', '#C2DFFF'); // Putih dan Biru
 
 		$colorIndex = 0;
 		foreach ($duplicates as $group) {
@@ -87,13 +87,13 @@ class Excel extends CI_Controller {
 					continue; // Skip already processed rows
 				}
 				// Revisi Tanggal Masuk dan no RM
-				$currentNokartu = $row['D']; // Nomor Kartu
+				$currentNoRM = $row['D']; // Nomor RM
 				$currentTglMasuk = $row['B']; // Tanggal Pulang
 				// $currentNamaPeserta = $row['F']; // Nama Peserta
 		
 				$foundDuplicates = array();
 				foreach ($sheetData as $innerKey => $innerRow) {
-					if ($key != $innerKey && $currentNokartu == $innerRow['D'] && $currentTglMasuk == $innerRow['B']) {
+					if ($key != $innerKey && $currentNoRM == $innerRow['D'] && $currentTglMasuk == $innerRow['B']) {
 						$foundDuplicates[] = $innerRow;
 						$processedRows[] = $innerKey; // Mark row as processed
 					}
