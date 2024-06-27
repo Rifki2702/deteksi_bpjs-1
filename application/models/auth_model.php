@@ -1,5 +1,5 @@
 <?php
-class auth_model extends CI_Model
+class Auth_model extends CI_Model
 {
 	private $_table = "users";
 	const SESSION_KEY = 'user_id';
@@ -108,10 +108,47 @@ class auth_model extends CI_Model
 
 	public function update($data)
 	{
-		if (!$data['id']) {
-			return;
+		if (!isset($data['id'])) {
+			return FALSE;
 		}
 		return $this->db->update($this->_table, $data, ['id' => $data['id']]);
+	}
+
+	public function register_rules()
+	{
+		return [
+			[
+				'field' => 'username',
+				'label' => 'Username',
+				'rules' => 'required|max_length[32]'
+			],
+			[
+				'field' => 'email',
+				'label' => 'Email',
+				'rules' => 'required|valid_email|max_length[64]'
+			],
+			[
+				'field' => 'password',
+				'label' => 'Password',
+				'rules' => 'required|max_length[255]'
+			],
+			[
+				'field' => 'password_confirm',
+				'label' => 'Password Confirmation',
+				'rules' => 'required|matches[password]'
+			]
+		];
+	}
+
+	public function register($username, $email, $password)
+	{
+		$data = [
+			'username' => $username,
+			'email' => $email,
+			'password' => password_hash($password, PASSWORD_BCRYPT)
+		];
+
+		return $this->db->insert($this->_table, $data);
 	}
 }
 ?>

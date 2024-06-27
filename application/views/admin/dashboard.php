@@ -56,7 +56,7 @@
 			</div>
 		<?php endif ?>
 		<div class="grid grid-cols-2 gap-4">
-			<a href="<?=base_url('koding')?>" class="block max-w-fit pb-6 bg-card rounded-t-full rounded shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+			<a href="<?=base_url('Koding/manajemen')?>" class="block max-w-fit pb-6 bg-card rounded-t-full rounded shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
 				<div>
 					<img src="<?=base_url('public/assets/image-3.png')?>" class="h-auto w-full p-0 m-0" alt="">
 					<div class="pt-4">

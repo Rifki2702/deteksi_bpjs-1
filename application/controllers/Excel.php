@@ -6,20 +6,25 @@ class Excel extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->load->helper('url');
-		$this->load->library('session');
-		$this->load->model('auth_model');
-		if(!$this->auth_model->current_user()){
+        $this->load->helper('url');      // Memuat helper URL
+		$this->load->library('session');          // Memuat library sesi
+		$this->load->model('auth_model');         // Memuat model auth_model
+		        // Memeriksa apakah pengguna saat ini terautentikasi
+		if(!$this->auth_model->current_user()){   // Jika tidak terautentikasi, alihkan ke halaman login
 			redirect('auth/login');
 		}
 		// Load library PHPExcel (PhpSpreadsheet)
 		// $this->load->library('PhpSpreadsheet');
     }
-
+    
+    // Metode ini menampilkan tampilan 'upload_excel'
     public function index() {
         $this->load->view('upload_excel');
     }
+ 
 
+ 
+    // Metode ini mengembalikan aturan validasi untuk unggahan file
 	public function rules()
 	{
 		return [
@@ -30,7 +35,7 @@ class Excel extends CI_Controller {
 			],
 		];
 	}
-    public function upload() {
+    public function upload() {     // Metode ini mengembalikan aturan validasi untuk unggahan file
 		$this->load->library('form_validation');
 
 		if (empty($_FILES['file']['name']))
